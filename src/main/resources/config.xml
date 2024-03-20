@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean name="instanceFactoryTask" class="org.baothai.TodoListApp.TaskFactory"> </bean>
+    <bean name="task" class="org.baothai.TodoListApp.Task"
+          factory-bean="instanceFactoryTask"
+          factory-method="createTask">
+        <property name="taskID" value="123def"> </property>
+        <property name="jobDescription" value="checklist"> </property>
+        <property name="field" value="JobFair"> </property>
+        <property name="priority" value="High"> </property>
+        <property name="status" value="Done"> </property>
+    </bean>
+</beans>
